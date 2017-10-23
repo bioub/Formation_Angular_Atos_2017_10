@@ -1,3 +1,4 @@
+import { Clock } from './clock';
 
 const divElt = document.querySelector('.horloge');
 

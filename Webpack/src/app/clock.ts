@@ -1,10 +1,12 @@
+import format from 'date-fns/format';
+
 interface ClockOptions {
   container: Element | null,
   delay?: number,
   format?: string,
 }
 
-class Clock {
+export class Clock {
   private container: Element;
   private delay: number;
   private format: string;
@@ -19,10 +21,11 @@ class Clock {
   }
 
   private update() {
-    this.container.textContent = (new Date()).toLocaleTimeString();
+    this.container.textContent = format(new Date(), this.format);
   }
 
   public start() {
     this.update();
+    setInterval(this.update.bind(this), this.delay);
   }
 }
