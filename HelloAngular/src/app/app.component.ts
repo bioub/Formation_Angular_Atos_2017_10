@@ -4,14 +4,15 @@ import { Component } from '@angular/core';
   selector: 'hello-root',
   template: `
     <hello-clock></hello-clock>
-    <hello-prenom (onChangePrenom)="prenomHandler($event)"></hello-prenom>
+    <hello-prenom [(prenom)]="prenom"></hello-prenom>
     <hello-clock format="HH:mm" [delay]="1000 * 60"></hello-clock>
+    {{prenom}}
   `,
   styles: []
 })
 export class AppComponent {
 
-  public prenomHandler(prenom) {
-    console.log(prenom);
-  }
+  public prenom: string;
+
+  
 }

@@ -1,16 +1,28 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { NgbModule, NgbTooltipConfig } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
+import { FormComponent } from './form/form.component';
+import { ListComponent } from './list/list.component';
+import { ItemComponent } from './item/item.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FormComponent,
+    ListComponent,
+    ItemComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    NgbModule,
   ],
-  providers: [],
+  providers: [
+    NgbTooltipConfig
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

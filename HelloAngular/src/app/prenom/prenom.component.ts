@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, Input, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'hello-prenom',
@@ -26,14 +26,16 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
   styles: []
 })
 export class PrenomComponent {
-  public prenom: string = 'Inconnu';
+  
   public prenoms: string[] = ['Inconnu', 'Eric'];
 
+  @Input()
+  public prenom: string = 'Inconnu';
   @Output()
-  public onChangePrenom = new EventEmitter<string>();
+  public prenomChange = new EventEmitter<string>();
 
   public changePrenom(e) {
     this.prenom = e.target.value;
-    this.onChangePrenom.emit(this.prenom);
+    this.prenomChange.emit(this.prenom);
   }
 }

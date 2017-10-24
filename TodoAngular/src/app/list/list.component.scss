@@ -1,0 +1,13 @@
+$baseColor: lightgoldenrodyellow;
+
+:host {
+  todo-item {
+    background: green;
+
+    &:nth-child(even) {
+      background: darken($color: $baseColor, $amount: 5%);
+    }
+  }
+}
+
+
