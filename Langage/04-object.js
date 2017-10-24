@@ -20,7 +20,7 @@ const lettreAlea = () => {
 // Test de A
 const randomBackup = Math.random;
 Math.random = () => 0; // Monkey Patch
-console.log(lettreAlea());
+console.log(lettreAlea()); // A
 Math.random = randomBackup;
 
 // On peut supprimer des clés/valeurs
@@ -37,6 +37,8 @@ const coords2d = {
 // Exemple passage de params optionnels
 // à une foncion
 jQuery.ajax({
+  url: '/',
+  method: 'GET',
   onSuccess: function(){
 
   }
@@ -45,18 +47,19 @@ jQuery.ajax({
 
 // Nouvel objet avec une fonction constructeur (besoin récurrent)
 const Contact = function(prenom) {
-  this.prenom = prenom;
+  this._prenom = prenom;
 };
 
 Contact.prototype.hello = function() {
-  return 'Bonjour je suis ' + this.prenom;
+  return 'Bonjour je suis ' + this._prenom;
 };
 
 const romain = new Contact('Romain');
 console.log(typeof Contact); // function
 console.log(typeof romain); // object
 console.log(romain.hello());
+console.log(romain instanceof Contact); // true
 
 const jean = new Contact('Jean');
 
-console.log(romain.hello === jean.hello);
+console.log(romain.hello === jean.hello); // true

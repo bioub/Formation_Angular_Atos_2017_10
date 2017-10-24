@@ -1,6 +1,6 @@
-setTimeout(function() {
+setTimeout(function(hello) {
   console.log('1000ms');
-}, 1000);
+}, 1000, 'hello');
 
 setTimeout(function() {
   console.log('500ms');

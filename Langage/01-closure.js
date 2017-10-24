@@ -1,6 +1,6 @@
 
 const externe = function(msg) {
-
+  
   const interne = function() {
     console.log(msg);
   };
@@ -25,7 +25,7 @@ for (var i=0; i<3; i++) {
   setTimeout(externe(i), 1000);
 }
 
-
+/*
 function createButton() {
   // Closure
   let objVolumineux = {};
@@ -34,3 +34,4 @@ function createButton() {
     //
   })
 }
+*.

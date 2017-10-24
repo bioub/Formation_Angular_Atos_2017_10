@@ -46,3 +46,13 @@ class Client extends Contact {
     super(prenom);
   }
 }
+
+class UseContact {
+  constructor(public contact: Contact) {
+
+  }
+}
+
+
+const use = new UseContact(new Contact('R'));
+console.log(use.contact.hello());

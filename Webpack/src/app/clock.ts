@@ -29,3 +29,11 @@ export class Clock {
     setInterval(this.update.bind(this), this.delay);
   }
 }
+
+/*
+Function.prototype.bind = function(applyThis) {
+  return function() {
+    this.call(applyThis);
+  }
+}
+*/

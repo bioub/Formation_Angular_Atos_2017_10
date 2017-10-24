@@ -2,7 +2,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.jsx']
+    extensions: ['.ts', '.js']
   },
   devtool: 'source-map',
   entry: './src/app/main.ts',
@@ -13,7 +13,7 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.tsx?$/,
+        test: /\.ts$/,
         loader: 'awesome-typescript-loader'
       }
     ]
