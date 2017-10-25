@@ -1,8 +1,11 @@
-import { ContactService } from './../../core/services/contact.service';
-import { Contact } from './../../shared/models/contact';
+import { ContactService } from '../../core/services/contact/contact.service';
+import { Contact } from '../../shared/models/contact';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Title } from '@angular/platform-browser';
+
+import 'rxjs/add/operator/filter';
+
 
 @Component({
   selector: 'ab-contacts-list',
@@ -24,6 +27,13 @@ export class ContactsListComponent implements OnInit {
       this.title.setTitle(data.title);
     });
 
+    this.refreshList();
+    this.contactService.events
+      .filter(e => e === 'contact.write')
+      .subscribe(e => this.refreshList());
+  }
+
+  public refreshList() {
     this.contactService.getList$().subscribe(contacts => {
       this.contacts = contacts;
     });

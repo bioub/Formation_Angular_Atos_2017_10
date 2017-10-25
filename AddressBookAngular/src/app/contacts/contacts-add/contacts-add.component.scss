@@ -1,9 +1,20 @@
+$errorColor: red;
+$warningColor: orange;
 
-
-input.ng-invalid.ng-dirty {
-  border: 2px solid orange;
+p.alert.alert-error {
+  border: 2px solid $errorColor;
+  background: lighten($color: $errorColor, $amount: 30%);
+  padding: 5px;
 }
 
-input.ng-invalid.ng-touched {
-  border: 2px solid red;
+input.ng-invalid.ng-dirty {
+  border: 2px solid $warningColor;
+}
+
+form.submitted input.ng-invalid, input.ng-invalid.ng-touched {
+  border: 2px solid $errorColor;
+}
+
+span.error {
+  color: $errorColor;
 }

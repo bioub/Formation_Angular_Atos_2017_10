@@ -1,13 +1,21 @@
-<form (submit)="contactForm.valid && addContact()" #contactForm="ngForm">
-  <p *ngIf="contactForm.invalid && contactForm.submitted">
+<form
+  [ngClass]="{submitted: contactForm.submitted}"
+  (submit)="contactForm.valid && addContact()"
+  #contactForm="ngForm">
+  <p class="alert alert-error" *ngIf="contactForm.invalid && contactForm.submitted">
     Erreur dans le form
   </p>
   <p>
     Prénom: <input [(ngModel)]="contact.prenom" name="prenom" required>
+    <span class="error" *ngIf="nom.invalid && (nom.touched || contactForm.submitted)">
+      Le prénom est obligatoire
+    </span>
   </p>
   <p>
     Nom: <input [(ngModel)]="contact.nom" name="nom" required #nom="ngModel">
-    <span *ngIf="nom.invalid && nom.touched">Le nom est obligatoire</span>
+    <span class="error" *ngIf="nom.invalid && (nom.touched || contactForm.submitted)">
+      Le nom est obligatoire
+    </span>
   </p>
   <p>
     Email: <input [(ngModel)]="contact.email" name="email">

@@ -1,5 +1,5 @@
-import { ContactHttpService } from './services/contact-http.service';
-import { ContactService } from './services/contact.service';
+import { ContactService } from './services/contact/contact.service';
+import { FakeContactService } from './services/contact/fake-contact.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NotFoundComponent } from './not-found/not-found.component';
@@ -16,8 +16,9 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
   ],
   providers: [
-    { provide: ContactService, useClass: ContactHttpService },
-    // ContactService,
+    // A faire dans les tests
+    // { provide: ContactService, useClass: FakeContactService },
+    ContactService,
   ],
   exports: [
     NotFoundComponent,

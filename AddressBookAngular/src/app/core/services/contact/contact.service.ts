@@ -1,11 +1,14 @@
-import { Contact } from './../../shared/models/contact';
-import { Observable } from 'rxjs/Observable';
-import { Injectable } from '@angular/core';
+import { ContactServiceInterface } from './contact-service-interface';
+import { Injectable, EventEmitter } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { environment } from '../../../environments/environment';
+import { Observable } from 'rxjs/Observable';
+
+import { Contact } from '../../../shared/models/contact';
+import { environment } from '../../../../environments/environment';
 
 @Injectable()
-export class ContactHttpService {
+export class ContactService implements ContactServiceInterface {
+  public events = new EventEmitter<string>();
 
   constructor(
     private http: HttpClient,

@@ -1,5 +1,6 @@
+import { ContactService } from './../../core/services/contact/contact.service';
 import { Contact } from './../../shared/models/contact';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -14,16 +15,19 @@ export class ContactsAddComponent implements OnInit {
     nom: '',
   };
 
-  constructor(route: ActivatedRoute) {
-    route.data.subscribe((data) => {
-      console.log('AddComponent', data);
-    });
-  }
+  constructor(
+    private router: Router,
+    private contactService: ContactService,
+  ) {}
 
   ngOnInit() {
   }
 
   public addContact() {
-    console.log('submit');
+    this.contactService.create$(this.contact)
+      .subscribe((contact: Contact) => {
+        this.router.navigate(['contacts', contact.id]);
+        this.contactService.events.emit('contact.write');
+      });
   }
 }

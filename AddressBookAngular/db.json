@@ -1,11 +1,39 @@
 {
-  "contacts": [{
-    "id": 1,
-    "prenom": "Bill",
-    "nom": "Gates"
-  }, {
-    "id": 2,
-    "prenom": "Steve",
-    "nom": "Jobs"
-  }]
+  "contacts": [
+    {
+      "id": 1,
+      "prenom": "Bill",
+      "nom": "Gates"
+    },
+    {
+      "id": 2,
+      "prenom": "Steve",
+      "nom": "Jobs"
+    },
+    {
+      "prenom": "Romain",
+      "nom": "Bohdanowicz",
+      "id": 3
+    },
+    {
+      "prenom": "Toto",
+      "nom": "Titi",
+      "id": 4
+    },
+    {
+      "prenom": "Romainr",
+      "nom": "vdgd",
+      "id": 5
+    },
+    {
+      "prenom": "Test",
+      "nom": "Test",
+      "id": 6
+    },
+    {
+      "prenom": "Toto",
+      "nom": "Titi",
+      "id": 7
+    }
+  ]
 }

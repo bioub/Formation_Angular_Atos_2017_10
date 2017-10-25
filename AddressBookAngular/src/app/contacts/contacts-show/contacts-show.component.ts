@@ -1,5 +1,5 @@
 import { Contact } from './../../shared/models/contact';
-import { ContactService } from './../../core/services/contact.service';
+import { ContactService } from './../../core/services/contact/contact.service';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import 'rxjs/add/operator/map';
