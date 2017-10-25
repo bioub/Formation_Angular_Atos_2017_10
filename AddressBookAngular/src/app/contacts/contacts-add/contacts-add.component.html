@@ -1,0 +1,19 @@
+<form (submit)="contactForm.valid && addContact()" #contactForm="ngForm">
+  <p *ngIf="contactForm.invalid && contactForm.submitted">
+    Erreur dans le form
+  </p>
+  <p>
+    Prénom: <input [(ngModel)]="contact.prenom" name="prenom" required>
+  </p>
+  <p>
+    Nom: <input [(ngModel)]="contact.nom" name="nom" required #nom="ngModel">
+    <span *ngIf="nom.invalid && nom.touched">Le nom est obligatoire</span>
+  </p>
+  <p>
+    Email: <input [(ngModel)]="contact.email" name="email">
+  </p>
+  <p>
+    Téléphone: <input [(ngModel)]="contact.telephone" name="telephone">
+  </p>
+  <button>Ajouter</button>
+</form>

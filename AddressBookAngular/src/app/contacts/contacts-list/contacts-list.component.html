@@ -1,0 +1,9 @@
+<ul>
+  <li *ngFor="let c of contacts">
+    <a [routerLink]="[c.id]">
+      {{c.prenom}} {{c.nom}}
+    </a>
+  </li>
+</ul>
+
+<router-outlet></router-outlet>

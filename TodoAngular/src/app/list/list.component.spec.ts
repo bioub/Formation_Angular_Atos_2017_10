@@ -1,4 +1,7 @@
+import { ItemComponent } from './../item/item.component';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { By } from '@angular/platform-browser';
 
 import { ListComponent } from './list.component';
 
@@ -8,7 +11,10 @@ describe('ListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ListComponent ]
+      declarations: [
+        ListComponent,
+        ItemComponent,
+      ]
     })
     .compileComponents();
   }));
@@ -21,5 +27,7 @@ describe('ListComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+    const debugElement = fixture.debugElement
+                              .queryAll(By.css('todo-item'));
   });
 });

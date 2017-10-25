@@ -11,6 +11,10 @@ import { Component, OnInit, EventEmitter, Output, Input, ChangeDetectionStrategy
     </div>
 
     <div>
+      Prénom: <input (input)="changePrenomValue(inputPrenom.value)" #inputPrenom>
+    </div>
+
+    <div>
       Prénom (avec ngModel): <input bindon-ngModel="prenom">
     </div>
     <div>
@@ -36,6 +40,11 @@ export class PrenomComponent {
 
   public changePrenom(e) {
     this.prenom = e.target.value;
+    this.prenomChange.emit(this.prenom);
+  }
+
+  public changePrenomValue(prenom) {
+    this.prenom = prenom;
     this.prenomChange.emit(this.prenom);
   }
 }

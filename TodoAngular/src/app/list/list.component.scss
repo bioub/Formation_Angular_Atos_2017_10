@@ -7,6 +7,10 @@ $baseColor: lightgoldenrodyellow;
     &:nth-child(even) {
       background: darken($color: $baseColor, $amount: 5%);
     }
+
+    &:hover {
+      background: blue;
+    }
   }
 }
 

@@ -1,0 +1,16 @@
+<nav>
+    <a [routerLink]="['']"
+    routerLinkActive="current"
+    [routerLinkActiveOptions]="{exact: true}">Home</a>
+
+
+  <a [routerLink]="['contacts']"
+     routerLinkActive="current"
+     [routerLinkActiveOptions]="{exact: true}" >Liste</a>
+
+  <a routerLink="/contacts/add"
+     routerLinkActive="current"
+     [routerLinkActiveOptions]="{exact: true}">Ajouter</a>
+</nav>
+
+<router-outlet></router-outlet>

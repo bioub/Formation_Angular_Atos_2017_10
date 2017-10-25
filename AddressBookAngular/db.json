@@ -1,0 +1,11 @@
+{
+  "contacts": [{
+    "id": 1,
+    "prenom": "Bill",
+    "nom": "Gates"
+  }, {
+    "id": 2,
+    "prenom": "Steve",
+    "nom": "Jobs"
+  }]
+}

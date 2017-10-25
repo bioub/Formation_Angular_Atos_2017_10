@@ -9,6 +9,6 @@ export class AppComponent {
   public todos = ['Acheter du lait'];
 
   public handleNewTodo(todo) {
-    this.todos.push(todo);
+    this.todos = [todo, ...this.todos];
   }
 }
